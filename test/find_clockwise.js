@@ -8,19 +8,19 @@ var n = Math.PI * -.5,
 
 var b = require('../js/burgle');
 var assert = require('chai').assert;
-describe('find_clockwise', function() {
-    b._set({size: 3});
+describe('findClockwise', function() {
+    b.setDims({size: 3});
     it("should go e when traveling SE", function() {
-        assert.equal(b.find_clockwise(0, 4, [[e, 1],[s, 3]]), 1);
+        assert.equal(b.findClockwise(0, 4, [[e, 1],[s, 3]]), 1);
     });
     it("should go s when traveling SW", function() {
-        assert.equal(b.find_clockwise(2, 4, [[w, 1],[s, 5]]), 5);
+        assert.equal(b.findClockwise(2, 4, [[w, 1],[s, 5]]), 5);
     });
     it("should go w when traveling NW", function() {
-        assert.equal(b.find_clockwise(8, 4, [[n, 5],[w, 7]]), 7);
+        assert.equal(b.findClockwise(8, 4, [[n, 5],[w, 7]]), 7);
     });
     it("should go n when traveling NE", function() {
-        b._set({size: 3});
-        assert.equal(b.find_clockwise(6, 4, [[n, 3],[e, 7]]), 3);
+        b.setDims({size: 3});
+        assert.equal(b.findClockwise(6, 4, [[n, 3],[e, 7]]), 3);
     })
 });

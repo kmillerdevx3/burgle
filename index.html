@@ -22,20 +22,22 @@
   <script type="text/javascript" src="js/burgle.js"></script>
 </head>
 <body onLoad="Burgle.init()">
-  <select id="job" onChange="Burgle.new_job()">
-    <option value="3:4:8">The Bank Job (Standard)</option>
-    <option value="2:4:8">The Office Job (Intro)</option>
-    <option value="2:5:12">Fort Knox (Expert)</option>
+  <select id="job" onChange="Burgle.newJob()">
+    <option value="2:4:8:190m3:11hu0">The Office Job (Intro)</option>
+    <option value="3:4:8:703h1:e0607:81ll0" selected="selected">The Bank Job (Standard)</option>
+    <option value="2:5:12::">Fort Knox (Expert)</option>
   </select>
   <div id="floors"></div>
-  <br clear="all">
+  <br clear="all" />
   <div id="burgle_ctrl">
-    <button onClick="Burgle.generate()">Generate All Floors</button><br>
-    <button id="show_heatmap" onClick="Burgle.show_heat(true)">Show Heatmap</button>
-    <button id="hide_heatmap" class="hidden" onClick="Burgle.show_heat(false)">Hide Heatmap</button>
-    <br>
-    <br>
-    <a id="burgle_href" href="#">Permalink to current layout</a>
+    <button onClick="Burgle.generate()">Generate All Floors</button>
+    &nbsp;
+    <input type="checkbox" id="toggle_heatmap" onchange="Burgle.toggleHeatmap()" /><label for="toggle_heatmap">Show Heatmap</label>
+    <div id="links">
+      <a id="burgle_href" href="#">Permalink to current layout</a>
+      <br />
+      <a id="burgle_default_href" href="#">Default for this layout</a>
+    </div>
   </div>
 </body>
 </html>

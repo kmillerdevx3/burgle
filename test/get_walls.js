@@ -7,16 +7,16 @@
 //            ┃                  ┃ c d e f  ⬛ 1 ⬛ 2 ⬛ 3 ⬛  20
 var b = require('../js/burgle');
 var assert = require('chai').assert;
-describe('get_walls', function() {
+describe('getWalls', function() {
     function check_walls(ind, wanted, direction) {
-        var w = b.get_walls(ind);
+        var w = b.getWalls(ind);
         it(ind + ' should return ' + direction, function() {
             assert.sameMembers(w, wanted);
         });
     }
 
     describe('2x2', function () {
-        b._set({size: 2});
+        b.setDims({size: 2});
         check_walls(0, [0, 1], "se");
         check_walls(1, [0, 2], "sw");
         check_walls(2, [1, 3], "nw");
@@ -24,7 +24,7 @@ describe('get_walls', function() {
     });
 
     describe('3x3', function () {
-        b._set({size: 3});
+        b.setDims({size: 3});
         check_walls(0, [0, 2],       "se");
         check_walls(1, [0, 1, 3],    "esw");
         check_walls(2, [1, 4],       "sw");
@@ -37,7 +37,7 @@ describe('get_walls', function() {
     });
 
     describe('4x4', function () {
-        b._set({size: 4});
+        b.setDims({size: 4});
         check_walls(0, [0, 3], "se");
         check_walls(9, [11, 14, 15, 18], "se");
     });

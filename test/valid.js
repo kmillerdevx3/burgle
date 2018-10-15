@@ -141,9 +141,9 @@ var assert = require('chai').assert;
             checks.forEach(function(test) {
                 var is = test.valid ? ' is ' : ' is not ';
                 it(test.name + is + 'a valid layout', function() {
-                    b._set({shaft: test.shaft, size: 3});
-                    var floor = b.to_floor(test.walls);
-                    assert.equal(b.valid(floor), test.valid);
+                    b.setDims({shaft: test.shaft, size: 3});
+                    var floor = b.toFloor(test.walls);
+                    assert.equal(b.isValid(floor), test.valid);
                 });
             });
         });
